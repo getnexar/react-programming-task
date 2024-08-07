@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "classnames": "^2.3.2",
+    "classnames": "^2.5.1",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "sass": "^1.68.0"
+    "sass": "^1.77.8"
   },
   "devDependencies": {
     "@types/node": "latest",
