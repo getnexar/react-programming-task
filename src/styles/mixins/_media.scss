@@ -1,0 +1,11 @@
+@mixin respond-to($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin respond-less($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}

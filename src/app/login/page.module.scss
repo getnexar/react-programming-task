@@ -1,28 +1,43 @@
-.element1 {
-  background-image: linear-gradient(
-    119deg,
-    #00144f 10%,
-    #004e7b 35%,
-    #0b7589 57%,
-    #1ac5bf 83%,
-    #2efef2
-  );
+@use '@styles/mixins';
+@use '@styles/vars';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(119deg, #00144f 10%, #004e7b 35%, #0b7589 57%, #1ac5bf 83%, #2efef2);
 
   > img {
     left: 40px;
     pointer-events: none;
     position: absolute;
     top: 40px;
+    z-index: 1;
+
+    @include mixins.respond-less(vars.$screen-xs) {
+      filter: invert(1);
+    }
   }
 }
 
-.element2 {
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 0 3px 25px -5px rgba(0, 0, 0, 0.15);
-  padding: 48px;
+  max-width: 424px;
+  padding: 3rem;
   position: relative;
-  width: 424px;
+
+  @include mixins.respond-less(vars.$screen-xs) {
+    border-radius: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 1rem;
+  }
 
   &-title {
     color: #0c1831;
