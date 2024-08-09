@@ -1,16 +1,22 @@
-.element1 {
+@use '@styles/mixins';
+@use '@styles/vars';
+
+.root {
+  gap: 40px;
+}
+
+.sidebar {
   box-shadow: 0px 3px 25px -15px rgba(0, 0, 0, 0.15) inset;
   color: #fff;
-  height: 500px;
   width: 77px;
   text-align: center;
-  background-image: linear-gradient(
-    180deg,
-    rgba(129, 121, 234, 1) 0%,
-    rgba(77, 5, 79, 1) 81%,
-    rgba(3, 0, 80, 1) 100%
-  );
-  float: left;
+  background-image: linear-gradient(180deg, rgba(129, 121, 234, 1) 0%, rgba(77, 5, 79, 1) 81%, rgba(3, 0, 80, 1) 100%);
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
   > a:first-of-type {
     margin-top: 24px;
@@ -18,28 +24,73 @@
   }
 
   .button {
-    margin-top: 346px;
+    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     background-color: transparent;
     align-items: center;
     width: 100%;
     color: #d7caff;
+
+    svg {
+      font-size: 24px;
+    }
   }
 }
 
-.element2 {
-  display: inline-block;
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  gap: 32px;
+  margin-left: 77px;
+  padding: 0 40px;
+
+  @include mixins.respond-less(vars.$screen-md) {
+    flex-direction: column;
+  }
+
+  &-left {
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 408px;
+
+    @include mixins.respond-less(vars.$screen-md) {
+      width: 100%;
+    }
+  }
 }
 
-.element3 {
-  display: block;
+.row {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+
+  @include mixins.respond-less(vars.$screen-lg) {
+    flex-direction: column;
+  }
 }
 
 .widget {
   box-shadow: 0 2px 20px 0 RGBA(0, 0, 0, 0.06);
   border-radius: 16px;
   background-color: #fff;
+  padding: 24px;
+  display: flex;
+  width: 100%;
+
+  @include mixins.respond-less(vars.$screen-md) {
+    width: 100%;
+  }
 
   &-gradient {
     color: #fff;
@@ -54,36 +105,33 @@
 }
 
 .preventableCosts {
-  width: 840px;
+  width: 100%;
   height: 152px;
 }
 
 .accidentRiskReduction {
-  width: 840px;
+  width: 100%;
   height: 516px;
 }
 
 .speedCosts {
-  width: 404px;
+  //width: 404px;
   height: 400px;
 }
 
 .idleCosts {
-  width: 404px;
+  //width: 404px;
   height: 400px;
 }
 
 .highlights {
-  width: 408px;
   height: 104px;
 }
 
 .drivingHours {
-  width: 408px;
   height: 328px;
 }
 
 .drivingDistance {
-  width: 408px;
   height: 328px;
 }

@@ -1,12 +1,13 @@
 'use client';
 
-import Image from 'next/image';
 import {observer} from 'mobx-react-lite';
 import {useRouter} from 'next/navigation';
 import clsx from 'clsx';
 import * as Yup from 'yup';
+import Image from 'next/image';
 import {FormProvider, useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
+
 import Page from '@components/page';
 import Input from '@components/input';
 import {useAuthStore} from '@store';

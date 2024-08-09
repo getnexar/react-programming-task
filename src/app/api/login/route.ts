@@ -1,3 +1,5 @@
+import {fetchUser} from '@services/randomUserMe';
+
 type RouteRequest = {
   email: string;
   password: string;
@@ -20,15 +22,9 @@ export async function POST(request: Request) {
       });
     }
 
-    const responce = await fetch('https://randomuser.me/api/?results=1&inc=name&noinfo', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const data: RandomUserResponce = await responce.json();
+    const user = await fetchUser();
 
-    return Response.json(data?.results?.[0]);
+    return Response.json(user);
   } catch (e) {
     return new Response('Server error', {
       status: 500,
