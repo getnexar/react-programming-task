@@ -1,5 +1,6 @@
-import '@styles/globals.scss';
 import type {Metadata} from 'next';
+import Providers from '@providers';
+import '@styles/globals.scss';
 
 export const metadata: Metadata = {
   title: 'Nexar: Programming Task',
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body suppressHydrationWarning={true}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

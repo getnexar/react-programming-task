@@ -1,0 +1,9 @@
+.git
+.idea
+.vscode
+/dist
+/coverage
+/node_modules
+/**/.next
+/tmp
+/.nx
