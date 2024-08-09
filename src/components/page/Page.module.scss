@@ -1,0 +1,8 @@
+@use '@styles/mixins';
+@use '@styles/vars';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
